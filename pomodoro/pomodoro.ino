@@ -12,10 +12,17 @@ int pomodoro = 2;
 int long_break = 4;
 int short_break = 7;
 int melody[] = {
-  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+  NOTE_E7, NOTE_E7, 0, NOTE_E7,
+  0, NOTE_C7, NOTE_E7, 0,
+  NOTE_G7, 0, 0,  0,
+  NOTE_G6, 0, 0, 0,
 };
+
 int noteDurations[] = {
-  4, 8, 8, 4, 4, 4, 4, 4
+  12, 12, 12, 12,
+  12, 12, 12, 12,
+  12, 12, 12, 12,
+  12, 12, 12, 12
 };
 
 
@@ -58,7 +65,7 @@ void loop() {
  * This method is used to play a tone for timers
  */
 void tone_alarm() {
-  for (int thisNote = 0; thisNote < 8; thisNote++) {
+  for (int thisNote = 0; thisNote < 16; thisNote++) {
     int noteDuration = 1000 / noteDurations[thisNote];
     tone(12, melody[thisNote], noteDuration);
 
